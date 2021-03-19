@@ -1,0 +1,13 @@
+{
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": false,
+    "esModuleInterop": false
+  }
+}
