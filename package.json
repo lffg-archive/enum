@@ -1,0 +1,19 @@
+{
+  "name": "@lffg/enum",
+  "version": "0.0.0-alpha.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-lffg": "^20.0.0",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "eslintConfig": {
+    "extends": "lffg"
+  },
+  "prettier": "eslint-config-lffg/prettier"
+}
