@@ -1,7 +1,7 @@
 /**
  * Asserts the given value `val` is of type never. Throws otherwise.
  */
-export function assertNever(val: never): asserts val is never {
+export function assertNever(val: never): never {
   void val;
   unreachable();
 }
