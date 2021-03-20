@@ -1,18 +1,14 @@
-import { Ok, Err } from './result';
-import type { Result } from './result';
+import { resultPrototypeImpl } from './internal/result';
+import type { Result, ResultPrototype } from './internal/types';
 
-export { Result };
+export type { Result };
 
-/**
- * Creates a new `Ok` result, with type `Result<T, E = never>`.
- */
-export function ok<T, E = never>(data: T): Result<T, E> {
-  return new Ok<T>(data);
+export function ok<T>(data: T): Result<T, never> {
+  const base: ResultPrototype<T, never> = Object.create(resultPrototypeImpl);
+  return Object.assign(base, { type: 'ok', data } as const);
 }
 
-/**
- * Creates a new `Err` result, with type `Result<T = never, E>`.
- */
-export function err<E, T = never>(error: E): Result<T, E> {
-  return new Err<E>(error);
+export function err<E>(error: E): Result<never, E> {
+  const base: ResultPrototype<never, E> = Object.create(resultPrototypeImpl);
+  return Object.assign(base, { type: 'err', error } as const);
 }
